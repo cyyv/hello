@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -66,25 +67,26 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: ListView(
-          children: <Widget>[
+        body: ListView(children: <Widget>[
           Container(
-            child: Text(WordPair.random().toString(), style: TextStyle(color: Colors.blue,fontSize: 40)),
+            child: Center(child: Text(WordPair.random().toString(),
+                style: TextStyle(color: Colors.blue, fontSize: 40))),
           ),
           Container(
-            child: Text(WordPair.random().toString(), style: TextStyle(color: Colors.yellow,fontSize: 40)),
+            child: Center(child: Text(WordPair.random().toString(),
+                style: TextStyle(color: Colors.red, fontSize: 40))),
           ),
           Container(
-            child: Text(WordPair.random().toString(), style: TextStyle(color: Colors.green,fontSize: 40)),
+            child: Center(child: Text(WordPair.random().toString(),
+                style: TextStyle(color: Colors.green, fontSize: 40))),
           ),
           Container(
-            child: const Image(
-  image: NetworkImage('https://www.google.com/url?sa=i&url=https%3A%2F%2Finstaface.co.il%2Fproduct%2F%25D7%259C%25D7%2594%25D7%25A4%25D7%2595%25D7%259A-%25D7%25AA%25D7%259E%25D7%2595%25D7%25A0%25D7%2594-%25D7%259C%25D7%25A6%25D7%2599%25D7%2595%25D7%25A8%2F&psig=AOvVaw18enhiNQsFU3_xrmdJ7vMj&ust=1618340931104000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCuyvSz-e8CFQAAAAAdAAAAABAI'),
-),
+            child: Image(
+              image: NetworkImage(
+                  'https://instaface.co.il/wp-content/uploads/2020/03/%D7%9C%D7%94%D7%A4%D7%95%D7%9A-%D7%AA%D7%9E%D7%95%D7%A0%D7%94-%D7%9C%D7%A6%D7%99%D7%95%D7%A8-7-1.png'),
+            ),
           )
-          ]
-        ),
-        
+        ]),
       ),
     );
   }
