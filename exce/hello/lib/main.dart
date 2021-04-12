@@ -62,28 +62,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'cool',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: Text('wow'),
         ),
         body: ListView(children: <Widget>[
           Container(
-            child: Center(child: Text(WordPair.random().toString(),
-                style: TextStyle(color: Colors.blue, fontSize: 40))),
+            child: Center(
+                child: Text(WordPair.random().toString(),
+                    style: TextStyle(color: Colors.blue, fontSize: 40))),
           ),
           Container(
-            child: Center(child: Text(WordPair.random().toString(),
-                style: TextStyle(color: Colors.red, fontSize: 40))),
+            child: Center(
+                child: Text(WordPair.random().toString(),
+                    style: TextStyle(color: Colors.red, fontSize: 40))),
           ),
           Container(
-            child: Center(child: Text(WordPair.random().toString(),
-                style: TextStyle(color: Colors.green, fontSize: 40))),
+            child: Center(
+                child: Text(WordPair.random().toString(),
+                    style: TextStyle(color: Colors.green, fontSize: 40))),
           ),
           Container(
             child: Image(
               image: NetworkImage(
-                  'https://instaface.co.il/wp-content/uploads/2020/03/%D7%9C%D7%94%D7%A4%D7%95%D7%9A-%D7%AA%D7%9E%D7%95%D7%A0%D7%94-%D7%9C%D7%A6%D7%99%D7%95%D7%A8-7-1.png'),
+                  'https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?cs=srgb&dl=pexels-pixabay-207962.jpg&fm=jpg'),
             ),
           )
         ]),
