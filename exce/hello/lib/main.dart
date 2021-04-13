@@ -84,9 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(color: Colors.green, fontSize: 40))),
           ),
           Container(
-            child: Image(
+            child: Center(child: Image(
               image: NetworkImage(
-                  'https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?cs=srgb&dl=pexels-pixabay-207962.jpg&fm=jpg'),
+                  'https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?cs=srgb&dl=pexels-pixabay-207962.jpg&fm=jpg', scale: 10),
+            )
             ),
           )
         ]),
