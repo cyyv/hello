@@ -70,25 +70,30 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(children: <Widget>[
           Container(
             child: Center(
-                child: Text(WordPair.random().toString(),
+                child: Text("התנתק",
                     style: TextStyle(color: Colors.blue, fontSize: 40))),
           ),
           Container(
-            child: Center(
-                child: Text(WordPair.random().toString(),
-                    style: TextStyle(color: Colors.red, fontSize: 40))),
-          ),
-          Container(
-            child: Center(
-                child: Text(WordPair.random().toString(),
-                    style: TextStyle(color: Colors.green, fontSize: 40))),
-          ),
-          Container(
-            child: Center(child: Image(
-              image: NetworkImage(
-                  'https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?cs=srgb&dl=pexels-pixabay-207962.jpg&fm=jpg', scale: 10),
+            child: Row(
+              //textDirection: TextDirection.ltr,
+              children: <Widget>[
+                const Text("Q6", style: TextStyle(fontSize: 70, fontWeight: FontWeight.bold),),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('6530 7554 1580'),
+                      const Divider(
+                        height: 20,
+                        thickness: 5,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                      Text('2212 1937 5135'),
+                    ],
+                  ),
+                ),
+              ],
             )
-            ),
           )
         ]),
       ),
