@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'yes'),
     );
   }
 }
@@ -81,14 +81,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 Expanded(
                   child: Column(
                     children: <Widget>[
-                      Text('6530 7554 1580'),
+                      Text('6530 7554 1580' , style: TextStyle(fontSize: 30,color: Colors.redAccent),),
                       const Divider(
                         height: 20,
                         thickness: 5,
                         indent: 20,
                         endIndent: 20,
                       ),
-                      Text('2212 1937 5135'),
+                      Text('2212 1937 5135',style: TextStyle(fontSize: 30,color: Colors.blueAccent),),
                     ],
                   ),
                 ),
