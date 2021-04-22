@@ -63,8 +63,20 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(children: <Widget>[
           Container(
             child: Center(
-                child: Text("התנתק",
-                    style: TextStyle(color: Colors.blue, fontSize: 40))),
+              child: TextButton(
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blue),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LogIn()),
+                    );
+                  },
+                  child: Text("התנתק",
+                      style: TextStyle(color: Colors.blue, fontSize: 40))),
+            ),
           ),
           Container(
             color: const Color.fromARGB(66, 66, 66, 255),
@@ -419,6 +431,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ))
         ]),
+      ),
+    );
+  }
+}
+
+class LogIn extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("התחבר"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('חזור אחורה'),
+        ),
       ),
     );
   }
