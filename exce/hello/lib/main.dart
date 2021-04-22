@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -63,19 +63,22 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(children: <Widget>[
           Container(
             child: Center(
-              child: TextButton(
+              child: ElevatedButton(
                   style: ButtonStyle(
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.blue),
                   ),
-                  onPressed: () {
-                    Navigator.push(
+                  onPressed: () async {
+                    // ignore: non_constant_identifier_names
+                    final UserName = await Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => LogIn()),
                     );
+                    ScaffoldMessenger.of(context)
+                      ..showSnackBar(SnackBar(content: Text("$UserName")));
                   },
-                  child: Text("התנתק",
-                      style: TextStyle(color: Colors.blue, fontSize: 40))),
+                  child: Text("התחבר",
+                      style: TextStyle(color: Colors.redAccent, fontSize: 40))),
             ),
           ),
           Container(
@@ -436,7 +439,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+// ignore: must_be_immutable
 class LogIn extends StatelessWidget {
+  String name = "anon";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -444,13 +449,40 @@ class LogIn extends StatelessWidget {
         title: Text("התחבר"),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('חזור אחורה'),
-        ),
-      ),
+          child: Column(
+        children: <Widget>[
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('מסך בית'),
+          ),
+          TextField(
+              textAlign: TextAlign.right,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'מייל',
+                hintText: "תלחץ אנטר בינתיים",
+              ),
+              onSubmitted: (String value) {
+                name = value;
+              }),
+          TextField(
+            textAlign: TextAlign.right,
+            obscureText: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'סיסמא',
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context, name);
+            },
+            child: Text('התחבר'),
+          ),
+        ],
+      )),
     );
   }
 }
