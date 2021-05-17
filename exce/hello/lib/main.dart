@@ -478,6 +478,7 @@ class LogIn extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context, name);
+              name = name;
             },
             child: Text('התחבר'),
           ),
